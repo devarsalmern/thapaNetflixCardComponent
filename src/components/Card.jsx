@@ -1,46 +1,39 @@
+import serierData from "../api/seriesData.json";
 const Card = () => {
-  const name = "Queen of Tears";
-  const rating = 8.1;
-  const summary = "lorem ipsum";
-  const returnGenre = () => {
-    const genre = ["Drama", "Thriller"];
-    return genre.join(", ");
-  };
-  // let age = 18;
-  // let canWatch = "Not Available";
-  // if (age >= 18) {
-  //   canWatch = "Watch Now";
-  // }
-  const canWatch = (age) => {
-    if (age >= 18) {
-      return "Watch Now";
-    }
-    return "Not Available";
-  };
   return (
-    <>
-      <div>
-        <img src="Queen of Tears.png" alt="" />
-      </div>
-      <h2>Name: {name}</h2>
-      <h3>Rating: {rating}</h3>
-      <p>Summary: {summary}</p>
-      <p>Genre: {returnGenre()}</p>
-      {/* <button>{age >= 18 ? "Watch Now" : "Not Available"}</button> */}
-      {/*Another way */}
-      {/* <button>{canWatch}</button> */}
-      {/*Another way */}
-      <button>{canWatch(18)}</button>
-    </>
+    <ul>
+      {serierData.map((currElement) => {
+        return (
+          <li key={currElement.id}>
+            <div>
+              <img
+                src={currElement.img_url}
+                alt="currentElent.name"
+                width="40%"
+                height="40%"
+              />
+            </div>
+            <h2>Name: {currElement.name}</h2>
+            <h3>Rating: {currElement.rating}</h3>
+            <p>Summary: {currElement.description}</p>
+            <p>Cast {currElement.cast}</p>
+            <p>Genre: {currElement.genre}</p>
+            <a href={currElement.watch_url} target="_blank">
+              <button>Watch Now</button>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 
 export default Card;
 
-export const Header = () => {
-  return <h1>Netflix</h1>;
-};
+// export const Header = () => {
+//   return <h1>Netflix</h1>;
+// };
 
-export const Footer = () => {
-  return <h1>Footer</h1>;
-};
+// export const Footer = () => {
+//   return <h1>Footer</h1>;
+// };
