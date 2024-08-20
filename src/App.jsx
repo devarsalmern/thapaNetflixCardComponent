@@ -1,10 +1,10 @@
-import Card from "./components/Card";
+import NetflixSeries from "./components/Card";
 import Practice from "./components/Practice";
 
 const App = () => {
   return (
     <>
-      <Card />
+      <NetflixSeries />
     </>
   );
 };
