@@ -1,20 +1,16 @@
-const SeriesCard = (props) => {
+const SeriesCard = ({ data }) => {
+  const { img_url, name, rating, description, cast, genre, watch_url } = data;
   return (
-    <li key={props.key}>
+    <li>
       <div>
-        <img
-          src={props.currElement.img_url}
-          alt="currentElent.name"
-          width="40%"
-          height="40%"
-        />
+        <img src={img_url} alt="" width="40%" height="40%" />
       </div>
-      <h2>Name: {props.currElement.name}</h2>
-      <h3>Rating: {props.currElement.rating}</h3>
-      <p>Summary: {props.currElement.description}</p>
-      <p>Cast {props.currElement.cast}</p>
-      <p>Genre: {props.currElement.genre}</p>
-      <a href={props.currElement.watch_url} target="_blank">
+      <h2>Name: {name}</h2>
+      <h3>Rating: {rating}</h3>
+      <p>Summary: {description}</p>
+      <p>Cast {cast}</p>
+      <p>Genre: {genre}</p>
+      <a href={watch_url} target="_blank">
         <button>Watch Now</button>
       </a>
     </li>
