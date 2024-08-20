@@ -36,3 +36,11 @@ const Card = () => {
 };
 
 export default Card;
+
+export const Header = () => {
+  return <h1>Netflix</h1>;
+};
+
+export const Footer = () => {
+  return <h1>Footer</h1>;
+};

@@ -1,15 +1,17 @@
-import Card from "./components/Card";
+import Card, { Header, Footer } from "./components/Card";
 import Practice from "./components/Practice";
 
 const App = () => {
   return (
     <>
-      {/* <Card />
+      <Header />
       <Card />
       <Card />
       <Card />
-      <Card /> */}
-      <Practice />
+      <Card />
+      <Card />
+      {/* <Practice/> */}
+      <Footer />
     </>
   );
 };
